@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+
+/* Color scheme & typography */
+body{
+font-family:'Segoe UI', Arial, sans-serif;
+margin:0;
+padding:0;
+line-height:1.6;
+background:#f5f7fa;
+color:#333;
+}
+
+/* Header styling */
+header{
+background:linear-gradient(135deg,#004080,#0073e6);
+color:white;
+text-align:center;
+padding:30px 10px;
+}
+
+/* Navigation styling */
+nav{
+background:#ffffff;
+padding:12px;
+text-align:center;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:#004080;
+font-weight:bold;
+font-size:16px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#0073e6;
+text-decoration:underline;
+}
+
+/* Section layout & spacing */
+section{
+padding:30px;
+max-width:900px;
+margin:30px auto;
+background:white;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Headings */
+h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+h2{
+color:#004080;
+border-bottom:2px solid #0073e6;
+padding-bottom:5px;
+}
+
+/* List styling */
+ul{
+padding-left:20px;
+}
+
+ul li{
+margin:8px 0;
+}
+
+/* Links inside sections */
+section a{
+color:#0073e6;
+text-decoration:none;
+}
+
+section a:hover{
+text-decoration:underline;
+}
+
+/* Footer */
+footer{
+text-align:center;
+padding:20px;
+background:#004080;
+color:white;
+margin-top:40px;
+}
+
+/* Image styling (if you add profile image later) */
+img{
+max-width:150px;
+border-radius:50%;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+display:block;
+margin:10px auto;
+}
+
+/* Responsive Design */
+@media (max-width:768px){
+
+nav{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+section{
+margin:15px;
+padding:20px;
+}
+
+h1{
+font-size:28px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Syed Mehran Ahmad</h1>
+<p>CS Student | University of Engineering & Technology, Peshawar</p>
+</header>
+
+<nav>
+<a href="#about">About Me</a>
+<a href="#labs">Lab Exercises</a>
+<a href="https://github.com/Syed-Mehran-Ahmad/cs224l-web-lab-2.git" target="_blank">GitHub</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+<h2>About Me</h2>
+<p>Hello! I am a CS student at UET Peshawar, passionate about web technologies, coding, and software development. Welcome to my portfolio!</p>
+</section>
+
+<section id="labs">
+<h2>Lab Exercises</h2>
+<ul>
+<li><a href="profile.html">Lab 1: Personal Profile Page</a></li>
+<li><a href="schedule.html">Lab 2: Course Schedule Table</a></li>
+<li><a href="navigation.html">Lab 3: Navigation Menu</a></li>
+<li><a href="registration.html">Lab 4: Registration Form</a></li>
+</ul>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:your.email@uetpeshawar.edu.pk">your.email@uetpeshawar.edu.pk</a></p>
+</section>
+
+<footer>
+© 2026 Syed Mehran Ahmad | University of Engineering & Technology, Peshawar
+</footer>
+
+</body>
+</html>
