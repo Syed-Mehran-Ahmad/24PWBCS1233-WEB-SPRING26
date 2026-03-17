@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Media Query Demo</title>
+
+<link rel="stylesheet" href="styles/media-query-demo.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav-container">
+
+<h1 class="logo">ResponsiveLab</h1>
+
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="hamburger">☰</label>
+
+<nav>
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">Demo</a></li>
+<li><a href="#">Layouts</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+<button id="theme-toggle">🌙</button>
+
+</div>
+
+<div class="hero">
+
+<h2>Media Query Demonstration</h2>
+<p>Resize the browser to see responsive changes</p>
+
+<div class="screen-info">
+Screen Width: <span id="screen-width">0</span> px
+</div>
+
+</div>
+
+</header>
+
+
+<section class="breakpoints">
+
+<h2>Breakpoint Indicator</h2>
+
+<div class="indicator mobile">📱 Mobile Layout</div>
+<div class="indicator tablet">💻 Tablet Layout</div>
+<div class="indicator desktop">🖥 Desktop Layout</div>
+
+</section>
+
+
+<section class="layout">
+
+<h2>Responsive Layout Cards</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Flexibility</h3>
+<p>Responsive design adapts content to any device.</p>
+</div>
+
+<div class="card">
+<h3>CSS Grid</h3>
+<p>Modern layouts become easier with CSS Grid.</p>
+</div>
+
+<div class="card">
+<h3>Media Queries</h3>
+<p>Media queries detect screen size changes.</p>
+</div>
+
+<div class="card">
+<h3>Best UX</h3>
+<p>Users get the best experience on every device.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="typography">
+
+<h2>Responsive Typography</h2>
+
+<p>
+Font sizes scale based on the screen size. This ensures readability
+across mobile phones, tablets, and desktop monitors.
+</p>
+
+</section>
+
+
+<footer>
+
+<p>Responsive Design Demonstration Page</p>
+
+</footer>
+
+
+<script>
+
+function updateWidth(){
+document.getElementById("screen-width").textContent = window.innerWidth;
+}
+
+window.addEventListener("resize", updateWidth);
+updateWidth();
+
+
+const toggle = document.getElementById("theme-toggle");
+
+toggle.addEventListener("click", () => {
+
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+toggle.textContent="☀️";
+}else{
+toggle.textContent="🌙";
+}
+
+});
+
+</script>
+
+</body>
+</html>

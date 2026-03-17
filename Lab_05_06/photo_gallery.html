@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfect Masonry Photo Gallery</title>
+  <link rel="stylesheet" href="styles/photo_gallery.css">
+</head>
+<body>
+
+<header>
+  <h1>Perfect Masonry Photo Gallery</h1>
+</header>
+
+<main class="gallery">
+  <div class="photo"><img src="images/photo1.jpeg" alt="Photo 1"><span>Photo1</span></div>
+  <div class="photo"><img src="images/photo2.jpeg" alt="Photo 2"><span>Photo2</span></div>
+  <div class="photo"><img src="images/photo3.jpeg" alt="Photo 3"><span>Photo3</span></div>
+  <div class="photo"><img src="images/photo4.jpeg" alt="Photo 4"><span>Photo4</span></div>
+  <div class="photo"><img src="images/photo5.jpeg" alt="Photo 5"><span>Photo5</span></div>
+  <div class="photo"><img src="images/photo6.jpeg" alt="Photo 6"><span>Photo6</span></div>
+  <div class="photo"><img src="images/photo7.jpeg" alt="Photo 7"><span>Photo7</span></div>
+  <div class="photo"><img src="images/photo8.jpeg" alt="Photo 8"><span>Photo8</span></div>
+</main>
+
+<script>
+  // JavaScript to calculate row span based on image height
+  const gallery = document.querySelector('.gallery');
+  const rowHeight = parseInt(window.getComputedStyle(gallery).getPropertyValue('grid-auto-rows'));
+  const rowGap = parseInt(window.getComputedStyle(gallery).getPropertyValue('gap'));
+
+  const photos = document.querySelectorAll('.photo');
+  photos.forEach(photo => {
+    const img = photo.querySelector('img');
+    img.addEventListener('load', () => {
+      const rowSpan = Math.ceil((img.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+      photo.style.gridRowEnd = `span ${rowSpan}`;
+    });
+  });
+</script>
+
+</body>
+</html>

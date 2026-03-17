@@ -1,0 +1,213 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #ff6f61;
+}
+
+/* Main Grid */
+.main-grid {
+  display: grid;
+  grid-template-areas:
+    "hero hero"
+    "projects projects"
+    "about contact";
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+/* Hero Section */
+.hero {
+  grid-area: hero;
+  position: relative;
+  background: #1a1a1a;
+  padding: 50px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ff6f61;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.decorative-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #ff6f61;
+  border-radius: 50%;
+  top: -50px;
+  right: -50px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Projects Section */
+.projects {
+  grid-area: projects;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: #1f1f1f;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  transition: transform 0.4s, box-shadow 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 200px;
+  transition: transform 0.4s;
+}
+
+.project-card h3 {
+  margin: 15px 20px 5px 20px;
+  color: #ff6f61;
+}
+
+.project-card p {
+  margin: 0 20px 15px 20px;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Hover Effects */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+  grid-area: about;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Contact Section */
+.contact {
+  grid-area: contact;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input, .contact textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: #2a2a2a;
+  color: #f0f0f0;
+}
+
+.contact button {
+  padding: 10px;
+  background: #ff6f61;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.contact button:hover {
+  background: #ff4a3a;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #1f1f1f;
+  margin-top: 40px;
+  color: #ccc;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-areas:
+      "hero"
+      "projects"
+      "about"
+      "contact";
+    grid-template-columns: 1fr;
+  }
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 600px) {
+  .hero {
+    padding: 30px;
+  }
+}

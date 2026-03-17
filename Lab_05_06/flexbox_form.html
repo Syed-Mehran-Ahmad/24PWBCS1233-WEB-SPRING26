@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Form Builder - Dark/Light Mode</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="styles/flexbox_form.css">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body class="dark-mode">
+
+<header class="header">
+<h1>Flexbox Form Builder</h1>
+<p>Professional Glassmorphism UI Form</p>
+<!-- Dark/Light toggle -->
+<button id="toggleMode" class="toggle-btn"><i class="fa fa-moon"></i></button>
+</header>
+
+<div class="form-container glass">
+
+<form id="dynamicForm">
+
+<!-- Personal Info -->
+<section class="form-section">
+<h2>Personal Information</h2>
+
+<div class="form-row">
+<div class="form-group">
+<i class="fa fa-user icon"></i>
+<input type="text" required placeholder=" ">
+<label>First Name</label>
+</div>
+
+<div class="form-group">
+<i class="fa fa-user icon"></i>
+<input type="text" required placeholder=" ">
+<label>Last Name</label>
+</div>
+</div>
+
+<div class="form-row">
+<div class="form-group">
+<i class="fa fa-envelope icon"></i>
+<input type="email" required placeholder=" ">
+<label>Email</label>
+</div>
+
+<div class="form-group">
+<i class="fa fa-phone icon"></i>
+<input type="tel" required placeholder=" ">
+<label>Phone</label>
+</div>
+</div>
+</section>
+
+<!-- Address -->
+<section class="form-section">
+<h2>Address Information</h2>
+
+<div class="form-row">
+<div class="form-group">
+<i class="fa fa-globe icon"></i>
+<select required>
+<option value=""></option>
+<option>Pakistan</option>
+<option>USA</option>
+<option>UK</option>
+<option>Canada</option>
+</select>
+<label>Country</label>
+</div>
+
+<div class="form-group">
+<i class="fa fa-city icon"></i>
+<input type="text" required placeholder=" ">
+<label>City</label>
+</div>
+</div>
+
+<div class="form-row">
+<div class="form-group">
+<i class="fa fa-map-pin icon"></i>
+<input type="text" placeholder=" ">
+<label>Postal Code</label>
+</div>
+
+<div class="form-group">
+<i class="fa fa-road icon"></i>
+<input type="text" placeholder=" ">
+<label>Street Address</label>
+</div>
+</div>
+</section>
+
+<!-- Account -->
+<section class="form-section">
+<h2>Account Setup</h2>
+<div class="form-row">
+<div class="form-group">
+<i class="fa fa-lock icon"></i>
+<input type="password" required placeholder=" ">
+<label>Password</label>
+</div>
+<div class="form-group">
+<i class="fa fa-lock icon"></i>
+<input type="password" required placeholder=" ">
+<label>Confirm Password</label>
+</div>
+</div>
+</section>
+
+<!-- Additional Info -->
+<section class="form-section">
+<h2>Additional Information</h2>
+<div class="form-group full">
+<textarea rows="4" placeholder=" "></textarea>
+<label>Your Message</label>
+</div>
+</section>
+
+<!-- Buttons -->
+<div class="buttons">
+<button type="submit" class="submit-btn">
+<i class="fa fa-paper-plane"></i> Submit
+</button>
+<button type="reset" class="reset-btn">
+<i class="fa fa-rotate-left"></i> Reset
+</button>
+</div>
+
+</form>
+</div>
+
+<!-- Success Message -->
+<div id="successMessage">
+<p><i class="fa fa-check-circle"></i> Form Submitted Successfully!</p>
+</div>
+
+<!-- JS for popup and dark/light toggle -->
+<script>
+const form = document.getElementById('dynamicForm');
+const success = document.getElementById('successMessage');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  success.classList.add('show');
+  setTimeout(() => success.classList.remove('show'), 3000);
+});
+
+// Dark/Light Mode Toggle
+const toggleBtn = document.getElementById('toggleMode');
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
+    // Change icon
+    toggleBtn.innerHTML = document.body.classList.contains('dark-mode')
+        ? '<i class="fa fa-moon"></i>'
+        : '<i class="fa fa-sun"></i>';
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Utility Classes</title>
+  <link rel="stylesheet" href="responsive_utility_classes.css">
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f6fa;
+      color: #333;
+      margin: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2f3640;
+      opacity: 0;
+      animation: fadeInUp 0.8s forwards 0.2s;
+    }
+    .demo-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      border: 2px solid #dcdde1;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+      position: relative;
+    }
+    /* stagger animation delays */
+    .demo-box:nth-child(1) { animation-delay: 0.2s; }
+    .demo-box:nth-child(2) { animation-delay: 0.4s; }
+    .demo-box:nth-child(3) { animation-delay: 0.6s; }
+    .demo-box:nth-child(4) { animation-delay: 0.8s; }
+    .demo-box:nth-child(5) { animation-delay: 1s; }
+    .demo-box:nth-child(6) { animation-delay: 1.2s; }
+    .demo-box:nth-child(7) { animation-delay: 1.4s; }
+    .demo-box:nth-child(8) { animation-delay: 1.6s; }
+    .demo-box:nth-child(9) { animation-delay: 1.8s; }
+
+    .demo-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+      border-color: #00a8ff;
+      color: #00a8ff;
+    }
+
+    /* Icon animations */
+    .demo-box i {
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    /* Keyframes for icons */
+    @keyframes rotateBounce {
+      0% { transform: rotate(0deg) translateY(0); }
+      50% { transform: rotate(15deg) translateY(-5px); }
+      100% { transform: rotate(0deg) translateY(0); }
+    }
+    @keyframes scaleBounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    @keyframes wiggle {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg); }
+      50% { transform: rotate(10deg); }
+      75% { transform: rotate(-10deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive icon animations */
+    @media (max-width: 575px) { .demo-box i { animation: rotateBounce 2s infinite; } }
+    @media (min-width: 576px) and (max-width: 767px) { .demo-box i { animation: scaleBounce 2s infinite; } }
+    @media (min-width: 768px) and (max-width: 991px) { .demo-box i { animation: wiggle 2s infinite; } }
+    @media (min-width: 992px) { .demo-box i { animation: rotateBounce 1.5s infinite alternate; } }
+
+    /* Flex container */
+    .flex-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .flex-demo .demo-box { flex: 1 1 150px; }
+
+    .section-title {
+      margin-top: 3rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #273c75;
+    }
+
+    /* Tooltip styles */
+    .tooltip {
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2f3640;
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .demo-box:hover .tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Responsive Utility Classes</h1>
+
+  <!-- Display Utilities -->
+  <div class="section-title">Display Utilities</div>
+  <div class="flex-demo">
+    <div class="demo-box d-block">
+      <i class="fas fa-eye"></i> .d-block
+      <span class="tooltip">.d-block</span>
+    </div>
+    <div class="demo-box d-none">
+      <i class="fas fa-eye-slash"></i> .d-none
+      <span class="tooltip">.d-none</span>
+    </div>
+    <div class="demo-box d-sm-none">
+      <i class="fas fa-mobile-alt"></i> .d-sm-none
+      <span class="tooltip">.d-sm-none</span>
+    </div>
+    <div class="demo-box d-md-block">
+      <i class="fas fa-desktop"></i> .d-md-block
+      <span class="tooltip">.d-md-block</span>
+    </div>
+  </div>
+
+  <!-- Spacing Utilities -->
+  <div class="section-title">Spacing Utilities</div>
+  <div class="demo-box m-1 p-3">
+    <i class="fas fa-arrows-alt"></i> .m-1 .p-3
+    <span class="tooltip">.m-1 .p-3</span>
+  </div>
+  <div class="demo-box m-3 p-1">
+    <i class="fas fa-arrows-alt-h"></i> .m-3 .p-1
+    <span class="tooltip">.m-3 .p-1</span>
+  </div>
+  <div class="demo-box m-5 p-5">
+    <i class="fas fa-arrows-alt-v"></i> .m-5 .p-5
+    <span class="tooltip">.m-5 .p-5</span>
+  </div>
+
+  <!-- Text Alignment Utilities -->
+  <div class="section-title">Text Alignment</div>
+  <div class="demo-box text-left">
+    <i class="fas fa-align-left"></i> .text-left
+    <span class="tooltip">.text-left</span>
+  </div>
+  <div class="demo-box text-center">
+    <i class="fas fa-align-center"></i> .text-center
+    <span class="tooltip">.text-center</span>
+  </div>
+  <div class="demo-box text-right">
+    <i class="fas fa-align-right"></i> .text-right
+    <span class="tooltip">.text-right</span>
+  </div>
+
+  <!-- Flexbox Utilities -->
+  <div class="section-title">Flexbox Utilities</div>
+  <div class="flex-demo d-flex flex-row justify-center align-center">
+    <div class="demo-box">
+      <i class="fas fa-th"></i> Box 1
+      <span class="tooltip">.d-flex .flex-row .justify-center .align-center</span>
+    </div>
+    <div class="demo-box">
+      <i class="fas fa-th-large"></i> Box 2
+      <span class="tooltip">.d-flex .flex-row</span>
+    </div>
+    <div class="demo-box">
+      <i class="fas fa-th-list"></i> Box 3
+      <span class="tooltip">.d-flex .flex-row</span>
+    </div>
+  </div>
+
+  <div class="flex-demo d-flex flex-column justify-start align-start">
+    <div class="demo-box">
+      <i class="fas fa-columns"></i> Column 1
+      <span class="tooltip">.flex-column .justify-start .align-start</span>
+    </div>
+    <div class="demo-box">
+      <i class="fas fa-columns"></i> Column 2
+      <span class="tooltip">.flex-column .justify-start</span>
+    </div>
+    <div class="demo-box">
+      <i class="fas fa-columns"></i> Column 3
+      <span class="tooltip">.flex-column .align-start</span>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:3rem; color:#718093;">
+    Resize the browser to see responsive utility classes and animated icons in action!
+  </p>
+
+</body>
+</html>

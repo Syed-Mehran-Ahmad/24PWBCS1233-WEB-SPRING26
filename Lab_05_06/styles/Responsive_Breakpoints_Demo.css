@@ -1,0 +1,134 @@
+/* Base styles for mobile (0px - 767px) */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: linear-gradient(-45deg, #f0f4f8, #e6f0ff, #d0e4ff, #f0f4f8);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header & Footer */
+.site-header, .site-footer {
+  text-align: center;
+  padding: 25px 10px;
+  background: linear-gradient(90deg, #004080, #0066cc);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.site-header p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  color: #cce0ff;
+}
+
+/* Container */
+.container {
+  padding: 15px;
+  transition: padding 0.3s ease;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+/* Card styles */
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px 15px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.1rem;
+  backdrop-filter: blur(5px); /* adds frosted glass effect */
+}
+
+/* Card Icon */
+.card-icon {
+  display: block;
+  margin-bottom: 10px;
+  transition: transform 0.5s ease, stroke 0.3s ease;
+}
+
+/* Card hover effects */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background-color: rgba(230, 240, 255, 0.95);
+  color: #004080;
+}
+
+.card:hover .card-icon {
+  transform: rotate(20deg) scale(1.2);
+  stroke: #0066cc;
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .container {
+    padding: 25px 40px;
+  }
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Extra Large (1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  .card-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Footer text */
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #cce0ff;
+}

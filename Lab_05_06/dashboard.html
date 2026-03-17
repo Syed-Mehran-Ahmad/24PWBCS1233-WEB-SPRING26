@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Users</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hamburger for mobile -->
+      <button class="hamburger" id="hamburger">&#9776;</button>
+
+      <!-- Stat Cards -->
+      <section class="stats">
+        <div class="stat-card">
+          <h3>Users</h3>
+          <p>1,245</p>
+        </div>
+        <div class="stat-card">
+          <h3>Sales</h3>
+          <p>$12,340</p>
+        </div>
+        <div class="stat-card">
+          <h3>Visitors</h3>
+          <p>8,765</p>
+        </div>
+        <div class="stat-card">
+          <h3>Orders</h3>
+          <p>342</p>
+        </div>
+      </section>
+
+      <!-- Dashboard Content -->
+      <section class="dashboard-content">
+        <h2>Analytics Overview</h2>
+       
+        
+        <!-- Analytics Image -->
+        <div class="analytics-image">
+          <img src="images/analytics.jpeg" alt="Analytics Chart">
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- JS for sidebar toggle and hamburger animation -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+      hamburger.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

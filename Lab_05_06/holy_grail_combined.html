@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holy Grail Layout Comparison</title>
+  <link rel="stylesheet" href="styles/holy_grail_combined.css">
+</head>
+<body>
+
+<header>
+  Holy Grail Layout Comparison
+</header>
+
+<div class="layout-switch">
+  <button class="active" onclick="setLayout('float', this)">Float Layout</button>
+  <button onclick="setLayout('flex', this)">Flexbox Layout</button>
+  <button onclick="setLayout('grid', this)">Grid Layout</button>
+</div>
+
+<div class="container float-layout">
+  <aside class="left">Left Sidebar</aside>
+  <main>Main Content</main>
+  <aside class="right">Right Sidebar</aside>
+</div>
+
+<footer>Footer</footer>
+
+<script>
+function setLayout(type, button) {
+  const container = document.querySelector('.container');
+  container.classList.remove('float-layout', 'flex-layout', 'grid-layout');
+  container.classList.add(type + '-layout');
+
+  // Update active button
+  document.querySelectorAll('.layout-switch button').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+}
+</script>
+
+</body>
+</html>
